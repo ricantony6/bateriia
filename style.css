@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #555;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 1.5rem;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.key {
+    width: 5rem;
+    height: 5rem;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+}
+
