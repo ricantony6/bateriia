@@ -5,14 +5,14 @@ document.body.addEventListener('keyup', (event)=>{
 document.querySelector(' .composer button').addEventListener('click', () => {
     let song = document.querySelector('#input').value;
 
-   if(song !== '') {
-     let songArry = song.split('');
-     playComposition(songArry);
+    if(song !== '' ) {
+       let songArry = song.split( '' );
+       playComposition(songArry);
    }
 });
 
  function playSound( sound ) {
-    let audioElement = document.querySelector( ` #s_${sound} `);
+    let audioElement = document.querySelector(` #s_${sound} `);
     let KeyElement = document.querySelector( ` div[data-key= ${sound}]`);
 
     if(audioElement) {
@@ -21,7 +21,7 @@ document.querySelector(' .composer button').addEventListener('click', () => {
     }
 
     if(KeyElement) {
-      KeyElement.classList.add('active');
+       KeyElement.classList.add('active');
       
       setTimeout(()=>{
           KeyElement.classList.remove('active');
@@ -29,36 +29,21 @@ document.querySelector(' .composer button').addEventListener('click', () => {
     }
  }
  
+ function playComposition(songArry) {
+    let wait = 0;
+
+     for(let songItem of songArry) {
+        setTimeout(()=>{
+          playSound(` key${songItem} `);
+        }, wait);
+
+        wait += 250;
+       }   
+  }
+ 
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-  
-  //  
-
-
-    
- //   ) {
-   //     
-     //   
-    //}/
-
-    //
-      /// 
-
-        ///
-           // 
-        //});
-  // / }
- // /  /  
- //}
