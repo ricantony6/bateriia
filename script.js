@@ -2,7 +2,14 @@ document.body.addEventListener('keyup', (event)=>{
     playSound( event.code.toLowerCase() );
 });
 
-document.querySelector(' .composer button');
+document.querySelector(' .composer button').addEventListener('click', () => {
+    let song = document.querySelector('#input').value;
+
+   if(song !== '') {
+     let songArry = song.split('');
+     playComposition(songArry);
+   }
+});
 
  function playSound( sound ) {
     let audioElement = document.querySelector( ` #s_${sound} `);
